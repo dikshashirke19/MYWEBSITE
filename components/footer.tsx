@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="glass p-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-sm text-gray-400">© {new Date().getFullYear()} Diksha Shirke. All rights reserved.</p>
+            <p className="text-sm text-gray-400">© {new Date().getFullYear()} Devico. All rights reserved.</p>
           </div>
           <div className="flex space-x-4">
             <Link
@@ -26,7 +26,7 @@ const Footer = () => {
             >
               <Linkedin className="h-5 w-5" />
             </Link>
-            <Link href="mailto:dikshasshirke@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors">
+            <Link href="mailto:contact@devico.com" className="text-gray-400 hover:text-blue-400 transition-colors">
               <Mail className="h-5 w-5" />
             </Link>
           </div>

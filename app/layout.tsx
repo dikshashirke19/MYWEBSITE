@@ -7,13 +7,13 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import BackgroundAnimation from "@/components/background-animation"
 import CustomCursor from "@/components/custom-cursor"
-import KubernetesCommands from "@/components/kubernetes-commands"
+import DevOpsHeadline from "@/components/devops-headline"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Diksha Shirke | DevOps Engineer",
-  description: "Portfolio website of Diksha Shirke, DevOps Engineer",
+  title: "Devico | DevOps Solutions",
+  description: "Professional DevOps services, training, and consulting",
     generator: 'v0.dev'
 }
 
@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950/20 to-slate-950 overflow-hidden relative">
             <BackgroundAnimation />
             <CustomCursor />
-            <KubernetesCommands position="random" interval={10000} />
+            <DevOpsHeadline />
             <div className="container mx-auto px-4 relative z-10">
               <Navbar />
               <main className="relative z-10">{children}</main>

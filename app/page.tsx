@@ -10,7 +10,7 @@ import CICDPipeline from "@/components/ci-cd-pipeline"
 
 export default function Home() {
   const [text, setText] = useState("")
-  const fullText = "kubectl deploy awesome-devops-engineer"
+  const fullText = "kubectl deploy awesome-devops-solutions"
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -47,24 +47,22 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="inline-block px-3 py-1 rounded-full bg-blue-900/50 text-blue-300 text-sm font-medium mb-2">
-              RHEL 9 Certified DevOps Engineer
+              Professional DevOps Solutions
             </div>
             <h1 className="text-4xl md:text-5xl font-bold">
-              Hey, I&apos;m{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                Diksha Shirke
-              </span>
+              Welcome to{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Devico</span>
             </h1>
             <p className="text-lg text-gray-300">
-              Slaying the DevOps game with 2+ years of experience in Cloud Architecture, Automation, and Server
-              Management. I make servers behave and clouds rain efficiency.
+              Elevating your infrastructure with expert DevOps services, cloud architecture, and automation solutions.
+              We make servers behave and clouds rain efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/portfolio">View My Work</Link>
+                <Link href="/portfolio">Meet Our Team</Link>
               </Button>
             </div>
             <div className="bg-slate-900 p-3 rounded-md font-mono text-sm text-blue-400">
@@ -79,7 +77,7 @@ export default function Home() {
               <div className="relative w-full aspect-square max-w-md mx-auto overflow-hidden rounded-full border-4 border-blue-600/30">
                 <Image
                   src="/placeholder.svg?height=500&width=500"
-                  alt="Diksha Shirke"
+                  alt="Devico"
                   width={500}
                   height={500}
                   className="object-cover"
@@ -124,9 +122,9 @@ export default function Home() {
       {/* CI/CD Pipeline Animation */}
       <CICDPipeline />
 
-      {/* Skills Overview */}
+      {/* Services Overview */}
       <motion.section style={{ y: skillsY }}>
-        <h2 className="text-3xl font-bold mb-8 text-center">My DevOps Superpowers</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Our DevOps Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -169,7 +167,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* GitHub Projects Preview */}
+      {/* Featured Projects */}
       <motion.section style={{ y: projectsY }}>
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Featured Projects</h2>
@@ -215,6 +213,23 @@ export default function Home() {
           ))}
         </div>
       </motion.section>
+
+      {/* Call to Action */}
+      <section className="glass p-8 text-center space-y-6">
+        <h2 className="text-2xl font-bold">Ready to transform your DevOps infrastructure?</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          Whether you need personalized training, consulting, or a complete DevOps transformation, we're here to help
+          you navigate the complex world of modern infrastructure.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Link href="/contact">Get Started</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/portfolio">Meet Our Expert</Link>
+          </Button>
+        </div>
+      </section>
     </div>
   )
 }

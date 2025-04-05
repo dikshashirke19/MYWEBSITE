@@ -2,10 +2,12 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Award, Briefcase, GraduationCap, Github, ExternalLink } from "lucide-react"
+import { Award, Briefcase, GraduationCap, Github, ExternalLink, ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { Button } from "@/components/ui/button"
 import CICDPipeline from "@/components/ci-cd-pipeline"
 
 export default function Portfolio() {
@@ -17,6 +19,7 @@ export default function Portfolio() {
 
   // Parallax effect values
   const headerY = useTransform(scrollYProgress, [0, 1], [0, 50])
+  const profileY = useTransform(scrollYProgress, [0, 1], [0, 80])
   const skillsY = useTransform(scrollYProgress, [0, 1], [0, 100])
   const experienceY = useTransform(scrollYProgress, [0, 1], [0, 70])
   const projectsY = useTransform(scrollYProgress, [0, 1], [0, 40])
@@ -113,12 +116,59 @@ export default function Portfolio() {
   return (
     <div className="space-y-16" ref={containerRef}>
       <motion.div className="text-center space-y-4" style={{ y: headerY }}>
-        <h1 className="text-4xl font-bold">My Portfolio</h1>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          RHEL 9 Certified with 2 years of experience in Cloud Architecture, Automation, and Server Management using
-          Linux. Skilled in Python, AWS, Kubernetes and OpenShift.
-        </p>
+        <Link href="/" className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-4">
+          <ArrowLeft className="h-4 w-4 mr-1" /> Back to Home
+        </Link>
+        <h1 className="text-4xl font-bold">Meet Our Expert</h1>
+        <p className="text-gray-400 max-w-2xl mx-auto">The driving force behind Devico's DevOps excellence</p>
       </motion.div>
+
+      {/* Profile Section */}
+      <motion.section className="glass p-8 md:p-12 rounded-xl" style={{ y: profileY }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6">
+            <div className="inline-block px-3 py-1 rounded-full bg-blue-900/50 text-blue-300 text-sm font-medium mb-2">
+              RHEL 9 Certified DevOps Engineer
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold">
+              Hey, I&apos;m{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                Diksha Shirke
+              </span>
+            </h1>
+            <p className="text-lg text-gray-300">
+              Slaying the DevOps game with 2+ years of experience in Cloud Architecture, Automation, and Server
+              Management. I make servers behave and clouds rain efficiency.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Link href="/contact">Get in Touch</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  View My GitHub
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 animated-gradient rounded-full"></div>
+            <div className="relative z-10 p-2">
+              <div className="relative w-full aspect-square max-w-md mx-auto overflow-hidden rounded-full border-4 border-blue-600/30">
+                <Image
+                  src="/placeholder.svg?height=500&width=500"
+                  alt="Diksha Shirke"
+                  width={500}
+                  height={500}
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* CI/CD Pipeline Animation */}
       <CICDPipeline />
@@ -279,6 +329,15 @@ export default function Portfolio() {
           </p>
         </div>
       </motion.section>
+
+      {/* Back to Website Button */}
+      <div className="text-center mb-8">
+        <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+          <Link href="/">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Devico Website
+          </Link>
+        </Button>
+      </div>
     </div>
   )
 }

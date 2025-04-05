@@ -41,12 +41,13 @@ const Navbar = () => {
       className={`py-4 mb-8 sticky top-0 z-50 transition-all duration-300 ${
         isScrolled ? "glass backdrop-blur-md" : ""
       }`}
+      style={{ marginTop: "1px" }}
     >
       <div className="flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Terminal className="h-6 w-6 text-blue-400" />
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            Diksha Shirke
+            Devico
           </span>
         </Link>
 
